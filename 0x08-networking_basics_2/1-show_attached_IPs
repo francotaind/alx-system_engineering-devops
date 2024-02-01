@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Use ifconfig to get the active IPv4 addresses
+active_ips=$(ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | grep -v "127.0.0.1")
+
+# Display the active IPs
+echo "$active_ips"
+
