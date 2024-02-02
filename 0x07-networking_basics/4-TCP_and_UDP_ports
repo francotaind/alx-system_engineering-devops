@@ -1,11 +1,5 @@
-#!/usr/bin env bash
-# Display listening sockets with PID and program name
-netstat -tulpn | awk '$6 == "LISTEN" {print $1, $4, $7}' | while read -r line; do
-    protocol=$(echo "$line" | awk '{print $1}')
-    port=$(echo "$line" | awk '{print $2}' | awk -F: '{print $NF}')
-    pid=$(echo "$line" | awk '{print $3}' | cut -d'/' -f1)
-    program=$(ps -p $pid -o comm=)
-    
-    echo "Protocol: $protocol, Port: $port, PID: $pid, Program: $program"
-done
+#!/usr/bin/env bash
+# Displays listening ports. Includes listening sockets as well
+# + as the PID and name of the program to which each socket belongs.
 
+netstat -lp

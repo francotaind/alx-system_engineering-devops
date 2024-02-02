@@ -1,12 +1,2 @@
-The OSI (Open Systems Interconnection) model is a conceptual framework that starndadizes functions of telecommunication or computing system into seven abstraction layers.
-
-It is organized from the lowest to the highest level
-The layers are;
-	physical
-	Data link
-	Network
-	Transport
-	Session
-	Presentation
-	Application
-The layers provide systematic way to understand and design network architectures ensuring interoperability and communication between different systems
+2
+2
