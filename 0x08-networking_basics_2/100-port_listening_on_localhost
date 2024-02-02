@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-# Set the port number
-PORT=98
+# Listens on port 98 on localhost.
 
-# Start listening on the specified port
-nc -l -p $PORT | while IFS= read -r line; do
-    echo "$line"
-done
-
+nc -l localhost 98
