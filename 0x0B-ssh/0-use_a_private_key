@@ -1,4 +1,11 @@
 #!/bin/bash
 
-ssh -i ~/.ssh/school ubuntu@server01
+# Specify server address (replace with your actual server IP or hostname)
+server_address="8.8.8.8"
+
+# Specify the path to the private key (ensure correct permissions for security)
+private_key_path="/home/$(whoami)/.ssh/school"
+
+# Use single-character flags to connect with SSH
+ssh -i "$private_key_path" -o "User=ubuntu" "$server_address"
 
