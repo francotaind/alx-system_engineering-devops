@@ -1,17 +1,17 @@
 #!/usr/bin/pup
-#1-install_flask.pp
-
-#Ensure python3-pip is installed
+# Using Puppet, install flask from pip3
 package { 'python3-pip':
-	ensure => installed,
+  ensure  => installed,
 }
 
-#Install Flask using pip3
-exec {'install_flask':
-	command => '/usr/bin/pip3 install flask==2.1.0'
-	unless => '/usr/bin/pip3 show flask | grep -q "Version: 2.1.0"',
+package { 'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3',
+  require  => Package['python3-pip'],
 }
-# Notify for successful installation
-notify {'Flask installed successfully':
-	subscribe => Exec['install_flask'],
+
+package { 'werkzeug':
+  ensure   => '2.1.1',
+  provider => 'pip',
+  require  => Package['python3-pip'],
 }
