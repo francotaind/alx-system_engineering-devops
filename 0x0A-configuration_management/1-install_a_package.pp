@@ -1,3 +1,4 @@
+#!/usr/bin/pup
 #1-install_flask.pp
 
 #Ensure python3-pip is installed
