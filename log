@@ -1,0 +1,20 @@
+#!/usr/bin/expect
+
+# Set variables for username, password, and server address
+set username "b9b909728496"
+set password "25196226fae2142be16b"
+set server "b9b909728496.57fabb7a.alx-cod.online"
+
+# Spawn SSH process
+spawn ssh $username@$server
+
+# Expect password prompt and send password
+expect "password:"
+send "$password\r"
+
+# Wait for SSH session to establish
+expect "$username@$server"
+
+# Now you're logged in, interact with the SSH session
+interact
+
